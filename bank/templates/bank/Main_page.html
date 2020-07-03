@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>BANKING SYSTEM</title>
+  
+</head>
+
+<body>
+
+<h3> TASK 1 </h3>
+  
+<form action="{% url 'onetask' %}" method="POST">
+{% csrf_token %}
+  <label for="ifsc code">Bank branch IFSC code:</label><br>
+  <input type="text" id="ifsc" name="ifsc"><br><br>
+  
+  <input type="submit" value="Get Branch Details">
+</form>
+
+<br>
+<br>
+<br>
+
+<h3> TASK 2 </h3>
+  
+<form action="{% url 'twotask' %}" method="POST">
+{% csrf_token %}
+  <label for="bank name">Bank Name:</label><br>
+  <input type="text" id="bname" name="bname"><br><br>
+  <label for="city">City:</label><br>
+  <input type="text" id="city" name="city"><br><br>
+  <input type="submit" value="Get Branchs">
+</form>
+
+
+  
+ 
+
+  
+ 
+</body>
+
+</html>

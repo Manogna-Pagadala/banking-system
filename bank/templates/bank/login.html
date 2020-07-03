@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>HOSPITAL MANAGEMENT SYSTEM</title>
+</head>
+
+<body>
+  <h3> LOGIN </h3>
+  
+<form action="{% url 'login1' %}" method="POST">
+{% csrf_token %}
+<label for="uname">User name:</label><br>
+  <input type="text" id="uname" name="uname"><br><br>
+  <label for="pwd">Password:</label><br>
+  <input type="password" id="pwd" name="pwd"><br><br>
+  
+  <input type="submit" value="Login">
+</form>
+
+</body>
+
+</html>

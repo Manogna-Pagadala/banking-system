@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>HOSPITAL MANAGEMENT SYSTEM</title>
+</head>
+
+<body>
+  <h3> DOCTOR PAGE </h3>
+  
+  <form action="{% url 'docappointments' %}" method="POST">
+{% csrf_token %}
+<input type="hidden" name="duname" value={{duname}}>
+<input type="submit" value="appointments">
+</form>
+
+<form action="{% url 'prescription' %}" method="POST">
+{% csrf_token %}
+<input type="hidden" name="duname" value={{duname}}>
+<input type="submit" value="prescriptions">
+</form>
+
+  <form>
+{% csrf_token %}
+<label>total appointments:</label>
+  <input type="text" name="ta" value={{ta}}><br><br>
+  <label>completed appointments:</label>
+  <input type="text" name="ca" value={{ca}}><br><br>
+  
+  <label>pending appointments:</label>
+  <input type="text" name="pa" value={{pa}}><br><br>
+  
+ 
+</form>
+
+  
+
+</body>
+
+</html>

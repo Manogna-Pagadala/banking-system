@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+
+</style>
+</head>
+<body>
+
+<h2>Appointment details</h2>
+
+<form action="{% url 'patientprofile' %}" method="POST">
+{% csrf_token %}
+<input type="hidden" name="puname" value={{puname}}>
+<input type="submit" value="profile">
+</form>
+<form action="{% url 'patmedicalhis' %}" method="POST">
+{% csrf_token %}
+<input type="hidden" name="puname" value={{puname}}>
+<input type="submit" value="medical history">
+</form>
+
+
+
+<table>
+  <tr>
+    <th>appointment date</th>
+    <th>appointment time</th>
+    <th>consulting doctor</th>
+    <th>appointment status</th>
+  </tr>
+  {% for row in res %}
+  
+  <tr>
+  {% for i in row %}
+    <td>{{i}}</td>
+   {% endfor %} 
+  </tr>
+  {% endfor %}
+</table>
+
+</body>
+</html>
+
